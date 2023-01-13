@@ -1,0 +1,13 @@
+{
+  "extends": "@tsconfig/node18-strictest-esm/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "build",
+    "removeComments": true,
+    "baseUrl": "src",
+    "paths": {
+      "#helper/*": ["helper/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "environment.d.ts", "esbuild.ts"],
+  "exclude": ["node_modules"]
+}
