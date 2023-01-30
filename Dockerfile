@@ -8,6 +8,9 @@ RUN npm run build
 FROM node:18-alpine AS starter
 ENV NODE_ENV production
 ENV PORT ${PORT}
+ENV REDIS_HOST ${REDIS_HOST}
+ENV REDIS_PORT ${REDIS_PORT}
+ENV REDIS_PASSWORD ${REDIS_PASSWORD}
 WORKDIR /usr/src/app
 RUN apk add shadow
 RUN groupmod -g 500 node && usermod -u 500 node

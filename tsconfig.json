@@ -8,6 +8,6 @@
       "#helper/*": ["helper/*"]
     }
   },
-  "include": ["src/**/*.ts", "environment.d.ts", "esbuild.ts"],
+  "include": ["src/**/*.ts", "environment.d.ts"],
   "exclude": ["node_modules"]
 }

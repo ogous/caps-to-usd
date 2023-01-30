@@ -3,8 +3,9 @@ export declare global {
     interface ProcessEnv {
       NODE_ENV?: 'test' | 'development' | 'production'
       PORT?: string
-      ADMIN_USER: string
-      ADMIN_PASSWORD: string
+      REDIS_HOST: string
+      REDIS_PORT: string
+      REDIS_PASSWORD: string
     }
   }
 }

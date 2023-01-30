@@ -1,16 +1,23 @@
 {
-  "name": "fastify-typescript-boilerplate",
+  "name": "caps-to-usd",
   "packageManager": "npm@8.19.2",
   "license": "UNLICENSED",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "tsx watch src",
-    "build": "tsc --noEmit && rm -rf ./build/**/* && tsx esbuild.ts",
-    "start:dev": "node build",
+    "build:rc": "tsc --noEmit && rm -rf ./build/**/* && tsx esbuild.ts",
+    "build": "rm -rf ./build/**/* && tsc -p tsconfig.json",
+    "start:dev": "node --enable-source-maps build",
     "start": "node index.js",
     "format": "prettier",
     "prepare": "husky install"
+  },
+  "exports": {
+    ".": "./build/index.js"
+  },
+  "imports": {
+    "#helper/*": "./build/helper/*.js"
   },
   "keywords": [
     "esbuild",
@@ -24,12 +31,14 @@
     "@fastify/autoload": "5.6.0",
     "@fastify/helmet": "10.1.0",
     "@fastify/rate-limit": "7.6.0",
+    "@fastify/redis": "^6.1.0",
     "@fastify/sensible": "5.2.0",
     "@fastify/type-provider-typebox": "2.4.0",
     "@sinclair/typebox": "0.25.16",
     "dotenv": "16.0.3",
     "fastify": "4.10.2",
-    "fastify-plugin": "4.4.0"
+    "fastify-plugin": "4.4.0",
+    "node-fetch": "^3.3.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",
